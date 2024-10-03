@@ -13,6 +13,6 @@ app.use(express.json());
 app.use(compression());
 
 // start express server
-app.listen(3000, () => {
-    console.log(`Server is running and listening at ${PORT}, Open in browser: http://localhost:3000`);
+app.listen(PORT, () => {
+    console.log(`Server is running and listening at ${PORT}, Open in browser: http://localhost:4000`);
 })
