@@ -8,7 +8,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-const PORT = process.env.POSTGRES_PORT;
+const PORT = process.env.SERVER_PORT;
 
 // establish database connection
 AppDataSource
