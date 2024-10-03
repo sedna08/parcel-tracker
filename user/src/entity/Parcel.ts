@@ -21,10 +21,10 @@ export class Parcel {
 
     @Column( {
         type: "enum",
-        enum: "Parcel_Status",
+        enum: Parcel_Status,
         default: Parcel_Status.NOT_YET_RECEIVED
     })
-    status: Parcel_Status
+    status: Parcel_Status;
 
      @Column({
         type: "timestamp"
