@@ -1,13 +1,15 @@
 import { DataSource } from "typeorm"
-import { Parcel } from "./entity/Parcel"
+import * as dotenv from "dotenv";
+
+dotenv.config();
 
 export const myDataSource = new DataSource({
     type: "postgres",
     host: "localhost",
     port: 5432,
-    username: "test",
-    password: "test",
-    database: "test",
+    username: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_DB,
     entities: [__dirname + "./src/entity/*.ts"],
     logging: true,
     synchronize: true,
