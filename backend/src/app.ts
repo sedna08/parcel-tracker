@@ -1,4 +1,5 @@
 import * as express from "express";
+import "reflect-metadata"
 import parcelRoutes from "./routes/parcelRoutes"
 import { Express, Request, Response } from "express";
 import { AppDataSource } from "./data-source";
