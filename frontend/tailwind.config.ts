@@ -11,6 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customYellow: '#ffc112',
+        customRed: '#ff2222'
       },
     },
   },
