@@ -96,7 +96,6 @@ export const createParcel = async (req: Request, res: Response) => {
         // Create a new Parcel entity
         const newParcel = new Parcel();
         newParcel.status = Parcel_Status.NOT_YET_RECEIVED;
-        newParcel.parcelDateReceived = new Date();
 
         // Save the Parcel entity
         const savedParcel = await parcelRepository.save(newParcel);

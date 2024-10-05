@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn, OneToMany } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn, OneToMany, BeforeInsert} from "typeorm"
 import { Parcel_Actions } from "./Parcel_Action"
 
 export enum Parcel_Status{
@@ -13,7 +13,7 @@ export enum Parcel_Status{
 
 @Entity()
 export class Parcel {
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryColumn()
     parcel_id: string
 
     @OneToMany(() => Parcel_Actions, (parcel_actions) => parcel_actions.parcel)
@@ -27,7 +27,18 @@ export class Parcel {
     status: Parcel_Status;
 
      @Column({
-        type: "timestamp"
+        type: "timestamp",
+        default: () => "CURRENT_TIMESTAMP"
     })
     parcelDateReceived: Date;
+
+    @BeforeInsert()
+    generateID() {
+        this.parcel_id = this.generateNumericID();
+        this.parcelDateReceived = new Date();
+    }
+
+    private generateNumericID():string {
+        return Math.floor(1000000000 + Math.random() * 9000000000).toString();
+    }
 }
