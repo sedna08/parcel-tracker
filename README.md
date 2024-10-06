@@ -8,12 +8,23 @@ All are services (frontend, backend, and database) are containerized.
 
 ## **Pre-requisites**
 - install `docker` on your machine
-- Make sure to define environment variables in `.env` file:
+- Clone the Repository and make sure to create and define environment variables in `.env` file:
     -   `POSTGRES_USER`
     -   `POSTGRES_PASSWORD`
     -   `POSTGRES_DB`
     -   `SERVER_PORT`
     -   `POSTGRES_PORT`
+    
+example:
+```
+POSTGRES_USER=user
+POSTGRES_PASSWORD=password
+POSTGRES_DB=mydb
+SERVER_PORT=4000
+POSTGRES_PORT=5432
+```
+
+
 
 - At the moment only the related PARCEL ACTIONS can be viewed in the website, there is no way to add parcels using the web app:
     - In order to add parcels and update parcel actions run commands in the CLI:
@@ -32,7 +43,7 @@ All are services (frontend, backend, and database) are containerized.
 
 
 ## **Run**
-- Clone the Repository and run:
+- Run in CLI:
     - `docker build`
     - `docker compose up -d`
     - access webapp on your browser using: http://localhost:3000
