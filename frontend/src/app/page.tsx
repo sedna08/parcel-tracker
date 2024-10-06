@@ -35,7 +35,8 @@ export default function Home() {
     const getParcels = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`${apiUrl}/parcels/${searchParcel.parcel_id}/actions`);
+            // const response = await axios.get(`${apiUrl}/parcels/${searchParcel.parcel_id}/actions`);
+            const response = await axios.get(`${apiUrl}/parcels`);
             setParcelActions(response.data.reverse());
         } catch(error) {
             console.error('Error getting parcel:', error);
@@ -48,7 +49,7 @@ export default function Home() {
 
             <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
                 <div className="space-y-4 w-full max-w-full">
-                    <form className="flex flex-col items-center justify-center p-4 bg-white-100 rounded">
+                    <form onSubmit= {getParcels} className="flex flex-col items-center justify-center p-4 bg-white-100 rounded">
                         <input
                             placeholder="Enter Parcel ID"
                             value={searchParcel.parcel_id}
