@@ -14,7 +14,7 @@ All are services (frontend, backend, and database) are containerized.
     -   `POSTGRES_DB`
     -   `SERVER_PORT`
     -   `POSTGRES_PORT`
-    
+
 - At the moment only the related PARCEL ACTIONS can be viewed in the website, there is no way to add parcels using the web app:
     - In order to add parcels and update parcel actions run commands in the CLI:
         - Add Parcel - `curl -X POST http://localhost:4000/parcels`
@@ -32,7 +32,7 @@ All are services (frontend, backend, and database) are containerized.
 
 
 ## **Run**
-Clone the Repository and run:
+- Clone the Repository and run:
     - `docker build`
     - `docker compose up -d`
     - access webapp on your browser using: http://localhost:3000
