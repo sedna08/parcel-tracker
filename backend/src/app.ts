@@ -5,7 +5,7 @@ import { Express, Request, Response } from "express";
 import { AppDataSource } from "./data-source";
 import * as compression from "compression";
 import * as dotenv from "dotenv";
-import cors from 'cors';
+import * as cors from 'cors';
 
 dotenv.config();
 
