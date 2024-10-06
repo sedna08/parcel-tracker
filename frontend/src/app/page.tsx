@@ -8,12 +8,15 @@ import { ParcelActions} from './parcelDetails';
 
 export default function Home() {
 
-    const apiUrl = process.env.BACKEND_URL || "http://localhost:4000";
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    // console.log(apiUrl);
+    const [searchButtonClicked, setSearchButtonClicked] = useState('false');
     const [parcelActions, setParcelActions] = useState<ParcelActions[]>([]);
     // const [parcels, setParcels] = useState<Parcel[]>([]);
     const [searchParcel, setSearchParcel] = useState({parcel_id: ''})
 
     const getParcelActions = async(e: React.FormEvent<HTMLFormElement>) => {
+        setSearchButtonClicked('true');
         e.preventDefault();
         try {
             const response = await axios.get(`${apiUrl}/parcels/${searchParcel.parcel_id}/actions`);
@@ -59,7 +62,7 @@ export default function Home() {
                         </button>
                     </form> 
                     <div className="space-y-2 w-5/6 ">
-                        {parcelActions.length > 0 ? (
+                        {(parcelActions.length > 0)? (
                             <>
                                 {parcelActions.map((parcelActions) => (
                                     <div key={parcelActions.action_id} className="flex flex-col shadow items-center justify-between p-4 rounded-lg">
@@ -68,13 +71,20 @@ export default function Home() {
                                 ))}
                             </>
                         ) : (
-                            <div className='flex justify-center'>
-                                <p className='text-lg font-semibold center text-red-500'>
-                                    Parcel Not Found
-                                </p>
-                            </div>
-                        )
-                        }
+                            <>
+                            {(searchButtonClicked === 'true')? (
+                                    <div className='flex justify-center'>
+                                    <p className='text-lg font-semibold center text-red-500'>
+                                        Parcel Not Found
+                                        </p>
+                                    </div>
+                                ): (
+                                    <>
+                                    </>
+                                )
+                            }
+                            </>
+                        )}
                     </div>
                 </div>
             </main>

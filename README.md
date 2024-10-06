@@ -24,6 +24,12 @@ SERVER_PORT=4000
 POSTGRES_PORT=5432
 ```
 
+- In the frontend directory define a .env file also that will map NEXT_PUBLIC_API_URL to your local machine's IP address. This will allow other devices in your network to also access the webapp using the IP address of your machine.
+    - example:
+
+    ```
+    NEXT_PUBLIC_API_URL=http://<your_ip_address>:4000
+    ```
 
 
 - At the moment only the related PARCEL ACTIONS can be viewed in the website, there is no way to add parcels using the web app:

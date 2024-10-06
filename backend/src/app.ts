@@ -10,7 +10,9 @@ import * as cors from 'cors';
 dotenv.config();
 
 
-const PORT = process.env.SERVER_PORT || 4000;
+const PORT = parseInt(process.env.SERVER_PORT,10);
+
+const HOST = '0.0.0.0';
 
 // establish database connection
 AppDataSource
@@ -27,7 +29,6 @@ AppDataSource
 const app: Express = express();
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000', // only allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type'],
 }));
@@ -35,6 +36,6 @@ app.use(compression());
 app.use(parcelRoutes);
 
 // start express server
-app.listen(PORT, () => {
-    console.log(`Server is running and listening at ${PORT}, Open in browser: http://localhost:4000`);
+app.listen(PORT, HOST, () => {
+    console.log(`Server is running and listening at ${PORT}`);
 })

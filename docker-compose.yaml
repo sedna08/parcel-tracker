@@ -9,21 +9,25 @@ services:
       dockerfile: frontend.dockerfile
     ports:
       - 3000:3000
-    environment:
-      - BACKEND_URL=http://localhost:4000
     restart: always
     depends_on:
       - backend
+    networks:
+      - common-net
   backend:
     container_name: backend
     image: backend
     build:
       context: ./backend
       dockerfile: backend.dockerfile
+    environment:
+      - SERVER_PORT=4000
     ports:
       - "4000:4000"
     depends_on:
       - db
+    expose:
+      - "4000"
     networks:
       - common-net
   db:
