@@ -1,4 +1,4 @@
-# PARCEL TRACKER WEB APP
+# **PARCEL TRACKER WEB APP**
 This application is a simple web app using the following stack:
     - Frontend -> NextJS using App Routing, TailwindCSS, TypeScript, and Axios for REST API connections
     - Backend -> NodeJS, TypeScript and TypeORM for database connection using Express for REST API
@@ -6,7 +6,7 @@ This application is a simple web app using the following stack:
 
 All are services (frontend, backend, and database) are containerized.
 
-## Pre-requisites
+## **Pre-requisites**
 - install `docker` on your machine
 - Make sure to define environment variables in `.env` file:
     -   `POSTGRES_USER`
@@ -15,15 +15,15 @@ All are services (frontend, backend, and database) are containerized.
     -   `SERVER_PORT`
     -   `POSTGRES_PORT`
 
-## Run
+## **Run**
 Clone the Repository and run:
     - `docker build`
     - `docker compose up -d`
     - access webapp on your browser using: http://localhost:3000
 
-### Sample Images
+### **Sample Images**
     - Parcel Found in search:
-        <img src = "./img/ParcelFound.png"/> 
+        ![ParcelFound](img/ParcelFound.png)
         
     - Parcel Not Found in seach:
-        <img src = "./img/ParcelNotFound.png"/> 
+        ![ParcelNotFound](img/ParcelNotFound.png)
