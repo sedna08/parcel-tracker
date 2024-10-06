@@ -14,6 +14,22 @@ All are services (frontend, backend, and database) are containerized.
     -   `POSTGRES_DB`
     -   `SERVER_PORT`
     -   `POSTGRES_PORT`
+    
+- At the moment only the related PARCEL ACTIONS can be viewed in the website, there is no way to add parcels using the web app:
+    - In order to add parcels and update parcel actions run commands in the CLI:
+        - Add Parcel - `curl -X POST http://localhost:4000/parcels`
+        - Update Parcel - `curl -X PUT http://localhost:4000/parcels -H "Content-Type: application/json" -d '{"status": "Received"}'` 
+            - The following "Value" for status must be the following:
+                - "In Transit",
+                - "Delivered",
+                - "Cancelled",
+                - "Returned To Seller",
+                - "Delivery Attempt Failed",
+                - "Received",
+                - "Not Yet Received"
+        - Get all Parcels to view parcel IDs - `curl -X GET http://localhost:4000/parcels`
+    - Or you can use POSTMAN to run the same commands.
+
 
 ## **Run**
 Clone the Repository and run:
