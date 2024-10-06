@@ -1,5 +1,5 @@
 import React from 'react';
-import {Parcel, ParcelActions, Parcel_Status} from '../parcelDetails';
+import {ParcelActions} from '../parcelDetails';
 
 const ParcelActionComponent: React.FC<{ parcelAction: ParcelActions }> = ({ parcelAction }) => {
     // const formattedDate = parcelAction.action_date_timestamp.toLocaleDateString('en-US');

@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import Header from './components/Header';
 import ParcelActionComponent from './components/ParcelActionComponent';
-import {Parcel, ParcelActions} from './parcelDetails';
+import { ParcelActions} from './parcelDetails';
 
 
 export default function Home() {
