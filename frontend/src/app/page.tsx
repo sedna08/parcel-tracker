@@ -28,7 +28,7 @@ interface Parcel {
 
 export default function Home() {
 
-    const apiUrl = process.env.BACKEND_URL;
+    const apiUrl = process.env.BACKEND_URL || "http://localhost:4000";
     const [parcelActions, setParcelActions] = useState<ParcelActions[]>([]);
     const [searchParcel, setSearchParcel] = useState({parcel_id: ''})
 
