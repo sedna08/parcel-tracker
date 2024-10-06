@@ -29,8 +29,9 @@ AppDataSource
 const app: Express = express();
 app.use(express.json());
 app.use(cors({
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
+    origin: [process.env.FRONTEND_ORIGIN],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type'],
 }));
 app.use(compression());
 app.use(parcelRoutes);

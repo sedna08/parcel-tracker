@@ -49,4 +49,5 @@ volumes:
   pgdata: {}
 
 networks:
-  common-net: {}
+  common-net: 
+    driver: bridge
