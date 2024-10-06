@@ -1,8 +1,8 @@
 # **PARCEL TRACKER WEB APP**
 This application is a simple web app using the following stack:
-    - Frontend -> NextJS using App Routing, TailwindCSS, TypeScript, and Axios for REST API connections
-    - Backend -> NodeJS, TypeScript and TypeORM for database connection using Express for REST API
-    - Database -> PostgreSQL
+- Frontend -> NextJS using App Routing, TailwindCSS, TypeScript, and Axios for REST API connections
+- Backend -> NodeJS, TypeScript and TypeORM for database connection using Express for REST API
+- Database -> PostgreSQL
 
 All are services (frontend, backend, and database) are containerized.
 
