@@ -49,8 +49,8 @@ POSTGRES_PORT=5432
 
 
 ## **Run**
-- Run in CLI:
-    - `docker build`
+- Run in CLI in the root directory:
+    - `docker compose build`
     - `docker compose up -d`
     - access webapp on your browser using: http://localhost:3000
 
@@ -59,6 +59,6 @@ POSTGRES_PORT=5432
         
 ![ParcelFound](img/ParcelFound.png)
         
-    - Parcel Not Found in seach:
+    - Parcel Not Found in search:
         
 ![ParcelNotFound](img/ParcelNotFound.png)
