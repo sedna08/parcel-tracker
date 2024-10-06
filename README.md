@@ -23,7 +23,9 @@ Clone the Repository and run:
 
 ### **Sample Images**
     - Parcel Found in search:
-        ![ParcelFound](img/ParcelFound.png)
+        
+![ParcelFound](img/ParcelFound.png)
         
     - Parcel Not Found in seach:
-        ![ParcelNotFound](img/ParcelNotFound.png)
+        
+![ParcelNotFound](img/ParcelNotFound.png)
