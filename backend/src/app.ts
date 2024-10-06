@@ -5,6 +5,7 @@ import { Express, Request, Response } from "express";
 import { AppDataSource } from "./data-source";
 import * as compression from "compression";
 import * as dotenv from "dotenv";
+import cors from 'cors';
 
 dotenv.config();
 
@@ -25,6 +26,11 @@ AppDataSource
 // create and setup express app
 const app: Express = express();
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:3000', // only allow requests from this origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+}));
 app.use(compression());
 app.use(parcelRoutes);
 
