@@ -24,6 +24,7 @@ services:
       - SERVER_PORT=4000
     ports:
       - "4000:4000"
+    restart: always
     depends_on:
       - db
     expose:
