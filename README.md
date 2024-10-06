@@ -8,7 +8,7 @@ All are services (frontend, backend, and database) are containerized.
 
 ## **Pre-requisites**
 - install `docker` on your machine
-- Clone the Repository and make sure to create and define environment variables in `.env` file:
+- Clone the Repository and make sure to create and define environment variables in `.env` file in the root directory:
     -   `POSTGRES_USER`
     -   `POSTGRES_PASSWORD`
     -   `POSTGRES_DB`
