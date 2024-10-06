@@ -19,9 +19,12 @@ export default function Home() {
             const response = await axios.get(`${apiUrl}/parcels/${searchParcel.parcel_id}/actions`);
             //console.log(response.data.reverse());
             setParcelActions(response.data.reverse());
-            setSearchParcel({parcel_id: ''});
+            //setSearchParcel({parcel_id: ''});
+            console.log(parcelActions)
         } catch(error) {
-            console.error('Error getting parcel:', error);
+            setParcelActions([]);
+            console.log(parcelActions)
+            //console.error('Error getting parcel:', error);
         }
     }
 
@@ -54,18 +57,27 @@ export default function Home() {
                         <button type="submit" className="w-5/6 p-2 text-white bg-blue-500 rounded hover:bg-blue-600">
                             Find Parcel
                         </button>
-                    </form>
-                    <div className="space-y-2 w-5/6">
-                    {parcelActions.toReversed().map((parcelActions) => (
-                        <div key={parcelActions.action_id} className="flex flex-col shadow items-center justify-between p-4 rounded-lg">
-                        <ParcelActionComponent parcelAction={parcelActions} />
-                        </div>
-                    ))}
+                    </form> 
+                    <div className="space-y-2 w-5/6 ">
+                        {parcelActions.length > 0 ? (
+                            <>
+                                {parcelActions.map((parcelActions) => (
+                                    <div key={parcelActions.action_id} className="flex flex-col shadow items-center justify-between p-4 rounded-lg">
+                                    <ParcelActionComponent parcelAction={parcelActions} />
+                                    </div>
+                                ))}
+                            </>
+                        ) : (
+                            <div className='flex justify-center'>
+                                <p className='text-lg font-semibold center text-red-500'>
+                                    Parcel Not Found
+                                </p>
+                            </div>
+                        )
+                        }
                     </div>
                 </div>
             </main>
-            
         </div>
     )
-
 }
