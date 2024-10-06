@@ -1,16 +1,16 @@
 "use client";
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import Header from './components/Header';
 import ParcelActionComponent from './components/ParcelActionComponent';
-import {Parcel, ParcelActions, Parcel_Status} from './parcelDetails';
+import {Parcel, ParcelActions} from './parcelDetails';
 
 
 export default function Home() {
 
     const apiUrl = process.env.BACKEND_URL || "http://localhost:4000";
     const [parcelActions, setParcelActions] = useState<ParcelActions[]>([]);
-    const [parcels, setParcels] = useState<Parcel[]>([]);
+    // const [parcels, setParcels] = useState<Parcel[]>([]);
     const [searchParcel, setSearchParcel] = useState({parcel_id: ''})
 
     const getParcelActions = async(e: React.FormEvent<HTMLFormElement>) => {
@@ -23,22 +23,22 @@ export default function Home() {
             console.log(parcelActions)
         } catch(error) {
             setParcelActions([]);
-            console.log(parcelActions)
-            //console.error('Error getting parcel:', error);
-        }
-    }
-
-    const getParcels = async(e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        try {
-            // const response = await axios.get(`${apiUrl}/parcels/${searchParcel.parcel_id}/actions`);
-            const response = await axios.get(`${apiUrl}/parcels`);
-            //console.log(response.data.reverse())
-            setParcels(response.data.reverse());
-        } catch(error) {
+            //console.log(parcelActions)
             console.error('Error getting parcel:', error);
         }
     }
+
+    // const getParcels = async(e: React.FormEvent<HTMLFormElement>) => {
+    //     e.preventDefault();
+    //     try {
+    //         // const response = await axios.get(`${apiUrl}/parcels/${searchParcel.parcel_id}/actions`);
+    //         const response = await axios.get(`${apiUrl}/parcels`);
+    //         //console.log(response.data.reverse())
+    //         setParcels(response.data.reverse());
+    //     } catch(error) {
+    //         console.error('Error getting parcel:', error);
+    //     }
+    // }
 
     return (
 
